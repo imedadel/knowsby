@@ -54,6 +54,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-lodash`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
