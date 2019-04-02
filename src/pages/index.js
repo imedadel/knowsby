@@ -56,7 +56,7 @@ class BlogIndex extends React.Component {
             <h2>{topic}</h2>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
-              if (node.frontmatter.topic == topic) {
+              if (node.frontmatter.topic === topic) {
                 return (
                   <div key={node.fields.slug}>
                     <h3
