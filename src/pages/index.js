@@ -13,15 +13,6 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    // let topics = []
-    // // Iterate through each post, putting all found tags into `tags`
-    // _.each(posts, edge => {
-    //   if (_.get(edge, "node.frontmatter.topic")) {
-    //     topics = topics.concat(edge.node.frontmatter.topic)
-    //   }
-    // })
-    // // Eliminate duplicate tags
-    // topics = _.uniq(topics)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -30,84 +21,8 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Bio />
-        {/* {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
-          )
-        })} */}
         <Latest />
-        {/* {topics.map(topic => (
-          <>
-            <h2>{topic}</h2>
-            {posts.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug
-              if (node.frontmatter.topic === topic) {
-                return (
-                  <div key={node.fields.slug}>
-                    <h3
-                      style={{
-                        marginBottom: rhythm(1 / 4),
-                      }}
-                    >
-                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                        {title}
-                      </Link>
-                    </h3>
-                    <small>{node.frontmatter.date}</small>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </div>
-                )
-              }
-            })}
-          </>
-        ))} */}
         <Topics />
-        {/* <h2>Featured</h2>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          if (node.frontmatter.featured) {
-            return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
-              </div>
-            )
-          }
-        })} */}
         <Featured />
       </Layout>
     )
