@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Featured from "../components/Featured"
 import { rhythm } from "../utils/typography"
 import _ from "lodash"
 
@@ -80,7 +81,7 @@ class BlogIndex extends React.Component {
             })}
           </>
         ))}
-        <h2>Featured</h2>
+        {/* <h2>Featured</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           if (node.frontmatter.featured) {
@@ -104,7 +105,8 @@ class BlogIndex extends React.Component {
               </div>
             )
           }
-        })}
+        })} */}
+        <Featured />
       </Layout>
     )
   }
