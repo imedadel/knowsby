@@ -9,7 +9,7 @@ import { rhythm } from "../utils/typography"
 import Topics from "../components/Topics"
 import Latest from "../components/Latest"
 
-class BlogIndex extends React.Component {
+class ArticlesIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -29,7 +29,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default ArticlesIndex
 
 export const pageQuery = graphql`
   query {
