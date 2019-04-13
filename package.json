@@ -35,6 +35,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
+    "tailwind.macro": "^0.5.10",
     "typeface-fira-sans": "^0.0.54",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
@@ -44,7 +45,8 @@
   "devDependencies": {
     "husky": "^1.3.1",
     "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0"
+    "pretty-quick": "^1.10.0",
+    "tailwindcss": "^0.7.4"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [

@@ -2,6 +2,11 @@ import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import _ from "lodash"
+// import styled from "styled-components"
+
+// const LatestWrapper = styled.div`
+//   max-width: ${rhythm(32/3)};
+// `
 
 const Latest = ({ data }) => (
   <>

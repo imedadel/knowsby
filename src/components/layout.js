@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import tw from "tailwind.macro"
+
+import NavBar from "./NavBar"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -81,11 +84,12 @@ class Layout extends React.Component {
         }}
       >
         <header>
-          {header}
+          {/* {header}
           <TopNav>
             <TopNavLink to={`/`}>Home</TopNavLink>
             <TopNavLink to={`/contact`}>Contact</TopNavLink>
-          </TopNav>
+          </TopNav> */}
+          <NavBar />
         </header>
         <main>{children}</main>
         <footer>

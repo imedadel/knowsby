@@ -20,9 +20,9 @@ class ArticlesIndex extends React.Component {
           title="All posts"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
-        <Latest />
+        {/* <Bio /> */}
         <Topics />
+        <Latest />
         <Featured />
       </Layout>
     )
