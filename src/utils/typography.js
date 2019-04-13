@@ -22,7 +22,7 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.75,
   headerFontFamily: ["Fira Sans", "Helvetica", "Arial", "sans-serif"],
-  bodyFontFamily: ["Montserrat", "serif"],
+  bodyFontFamily: ["Merriweather", "serif"],
   scaleRatio: 5 / 2,
   bodyColor: "hsla(0,0%,0%,0.9)",
   headerWeight: 900,
