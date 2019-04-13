@@ -1,7 +1,25 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 import { rhythm, scale } from "../utils/typography"
+
+const TopNav = styled.nav`
+  float: right;
+  display: block;
+  text-align: center;
+  padding: ${rhythm(1)} ${rhythm(1 / 2)};
+`
+
+const TopNavLink = styled(Link)`
+  text-decoration: none;
+  font-size: ${scale(1)};
+  margin-right: ${rhythm(1)};
+
+  &:last-child {
+    margin-right: 0;
+  }
+`
 
 class Layout extends React.Component {
   render() {
@@ -16,6 +34,7 @@ class Layout extends React.Component {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            display: `inline-block`,
           }}
         >
           <Link
@@ -36,6 +55,7 @@ class Layout extends React.Component {
           style={{
             fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
+            display: `inline-block`,
           }}
         >
           <Link
@@ -56,11 +76,17 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(32),
+          maxWidth: rhythm(36),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        <header>{header}</header>
+        <header>
+          {header}
+          <TopNav>
+            <TopNavLink to={`/`}>Home</TopNavLink>
+            <TopNavLink to={`/contact`}>Contact</TopNavLink>
+          </TopNav>
+        </header>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
