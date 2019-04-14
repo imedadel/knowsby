@@ -17,13 +17,13 @@ class ArticlesIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title="All articles"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         {/* <Bio /> */}
+        <Featured />
         <Topics />
         <Latest />
-        <Featured />
       </Layout>
     )
   }

@@ -5,11 +5,20 @@ import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
-const Wrapper = styled.div`
-  ${tw`w-full md:w-1/2 lg:w-1/3`};
+const TopicWrapper = styled.div`
+  ${tw`w-full md:w-1/2 lg:w-1/3 mb-8 pr-4`};
 `
-const TopicsWrap = styled.div`
-  ${tw`flex justify-between w-full`};
+const TopicsList = styled.div`
+  ${tw`flex justify-start w-full mb-16 flex-wrap`};
+`
+const TopicName = styled.h2`
+  ${tw`text-3xl mb-4`};
+`
+const TopicTitle = styled.h3`
+  ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
+`
+const TopicLink = styled(Link)`
+  ${tw`no-underline text-grey-darkest hover:underline`};
 `
 const Topics = ({ data }) => {
   let topics = []
@@ -22,37 +31,31 @@ const Topics = ({ data }) => {
 
   topics = _.uniq(topics)
   return (
-    <TopicsWrap>
+    <TopicsList>
       {topics.map(topic => (
-        <Wrapper>
-          <h2>{topic}</h2>
+        <TopicWrapper>
+          <TopicName>{topic}</TopicName>
           {data.allMarkdownRemark.edges.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             if (node.frontmatter.topic === topic) {
               return (
                 <div key={node.fields.slug}>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p
+                  <TopicTitle>
+                    <TopicLink to={node.fields.slug}>📝 {title}</TopicLink>
+                  </TopicTitle>
+                  {/* <small>{node.frontmatter.date}</small> */}
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
-                  />
+                  /> */}
                 </div>
               )
             }
           })}
-        </Wrapper>
+        </TopicWrapper>
       ))}
-    </TopicsWrap>
+    </TopicsList>
   )
 }
 

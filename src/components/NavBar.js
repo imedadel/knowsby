@@ -13,10 +13,10 @@ const NavBar_TitleText = styled.h2`
   ${tw`font-black text-5xl tracking-normal`};
 `
 const NavBar_MenuContainer = styled.div`
-  ${tw`w-full block flex-shrink lg:flex lg:items-center lg:w-auto text-base`};
+  ${tw`w-full block flex-shrink sm:flex sm:items-center sm:w-auto text-base`};
 `
 const NavBar_MenuLink = styled(Link)`
-  ${tw`block mt-4 lg:inline-block lg:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
+  ${tw`block mt-4 sm:inline-block sm:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
 `
 
 export default () => (
