@@ -24,6 +24,7 @@ class ArticlesIndex extends React.Component {
         <Featured />
         <Topics />
         <Latest />
+        {/* <Footer /> */}
       </Layout>
     )
   }
