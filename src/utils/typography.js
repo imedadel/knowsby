@@ -19,15 +19,12 @@ import Typography from "typography"
 // const typography = new Typography(Wordpress2016)
 
 const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.75,
+  baseFontSize: "16px",
+  baseLineHeight: 1.5,
   headerFontFamily: ["Fira Sans", "Helvetica", "Arial", "sans-serif"],
   bodyFontFamily: ["Merriweather", "serif"],
-  scaleRatio: 5 / 2,
-  bodyColor: "hsla(0,0%,0%,0.9)",
-  headerWeight: 900,
-  bodyWeight: 400,
-  boldWeight: 700,
+  scaleRatio: 3,
+  bodyColor: "#22292f",
   // See below for the full list of options.
 })
 

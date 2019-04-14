@@ -4,10 +4,10 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const NavBar = styled.nav`
-  ${tw`flex justify-between flex-wrap bg-transparent py-6 w-full`};
+  ${tw`flex justify-between flex-wrap bg-transparent pb-32 pt-16 w-full align-middle`};
 `
 const NavBar_TitleContainer = styled.div`
-  ${tw`flex items-center flex-no-shrink text-black mr-6`};
+  ${tw`flex items-center flex-no-shrink text-black mr-8`};
 `
 const NavBar_TitleText = styled.h2`
   ${tw`font-black text-5xl tracking-normal`};
