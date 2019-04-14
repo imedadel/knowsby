@@ -27,7 +27,7 @@ export default () => (
     <NavBar_MenuContainer>
       <NavBar_MenuLink to={`/`}>Home</NavBar_MenuLink>
       <NavBar_MenuLink to={`/about`}>About</NavBar_MenuLink>
-      <NavBar_MenuLink to={`contact`}>Contact</NavBar_MenuLink>
+      <NavBar_MenuLink to={`/contact`}>Contact</NavBar_MenuLink>
     </NavBar_MenuContainer>
   </NavBar>
 )
