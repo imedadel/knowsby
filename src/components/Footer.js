@@ -4,7 +4,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const Footer = styled.nav`
-  ${tw`flex justify-between flex-wrap bg-transparent pb-16 pt-8 w-full align-middle self-center border-t border-b-0 border-r-0 border-l-0 border-solid border-grey-light`};
+  ${tw`flex justify-between flex-wrap bg-transparent pb-16 pt-8 w-full align-middle self-center border-t border-b-0 border-r-0 border-l-0 border-solid border-grey-light pl-8`};
 `
 const Footer__CopyrightsContainer = styled.div`
   ${tw`flex items-center flex-no-shrink text-black mr-8`};

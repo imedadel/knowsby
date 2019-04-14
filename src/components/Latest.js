@@ -6,7 +6,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const LatestArticles = styled.div`
-  ${tw`mb-16`};
+  ${tw`mb-16 pl-8`};
 `
 const LatestArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
@@ -27,7 +27,7 @@ const LatestArticles__Title = styled.h3`
 
 const Latest = ({ data }) => (
   <LatestArticles>
-    <LatestArticles__Heading>Latest</LatestArticles__Heading>
+    <LatestArticles__Heading>✨ Latest</LatestArticles__Heading>
     <LatestArticles__Wrapper>
       {data.allMarkdownRemark.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug

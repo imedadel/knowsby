@@ -4,7 +4,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const NavBar = styled.nav`
-  ${tw`flex justify-between flex-wrap bg-transparent pb-32 pt-16 w-full align-middle self-center`};
+  ${tw`flex justify-between flex-wrap bg-transparent pb-32 pt-16 w-full align-middle self-center pl-8`};
 `
 const NavBar_TitleContainer = styled.div`
   ${tw`flex items-center flex-no-shrink text-black mr-8`};

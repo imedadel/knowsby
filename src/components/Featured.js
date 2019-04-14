@@ -5,7 +5,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const FeaturedArticles = styled.div`
-  ${tw`mb-16`};
+  ${tw`mb-16 pl-8`};
 `
 const FeaturedArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
@@ -42,7 +42,7 @@ export default () => (
     `}
     render={data => (
       <FeaturedArticles>
-        <FeaturedArticles__Heading>Featured</FeaturedArticles__Heading>
+        <FeaturedArticles__Heading>🎀 Featured</FeaturedArticles__Heading>
         <FeaturedArticles__Wrapper>
           {data.allMarkdownRemark.edges.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

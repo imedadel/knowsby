@@ -6,7 +6,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const TopicWrapper = styled.div`
-  ${tw`w-full md:w-1/2 lg:w-1/3 mb-8 pr-4`};
+  ${tw`w-full md:w-1/2 lg:w-1/3 mb-8 pl-8`};
 `
 const TopicsList = styled.div`
   ${tw`flex justify-start w-full mb-16 flex-wrap`};

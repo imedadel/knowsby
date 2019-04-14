@@ -24,6 +24,9 @@ const TopNavLink = styled(Link)`
     margin-right: 0;
   }
 `
+const LayoutContainer = styled.div`
+  ${tw`max-w-2xl m-auto pr-8`};
+`
 
 class Layout extends React.Component {
   render() {
@@ -76,14 +79,7 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(36),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <LayoutContainer>
         <header>
           {/* {header}
           <TopNav>
@@ -96,7 +92,7 @@ class Layout extends React.Component {
         <footer>
           <Footer />
         </footer>
-      </div>
+      </LayoutContainer>
     )
   }
 }
