@@ -9,10 +9,13 @@ import tw from "tailwind.macro"
 // //   ${tw`w-full md:w-1/2 lg:w-1/3 mb-8 pl-8`};
 // `
 const TopicsList = styled.div`
-  ${tw`flex justify-start w-full flex-wrap`};
+  ${tw`w-1/5`};
 `
-const TopicName = styled.h2`
+const TopicName = styled.div`
   ${tw`text-xl leading-normal`};
+`
+const Title = styled.h2`
+  ${tw`text-3xl mb-4`};
 `
 const Topics = ({ data }) => {
   let topics = []
@@ -26,8 +29,9 @@ const Topics = ({ data }) => {
   topics = _.uniq(topics)
   return (
     <TopicsList>
+      <Title>🗄️ Topics</Title>
       {topics.map(topic => (
-        <TopicName>{topic}</TopicName>
+        <TopicName>📁 {topic}</TopicName>
       ))}
     </TopicsList>
   )

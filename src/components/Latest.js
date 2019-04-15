@@ -6,7 +6,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const LatestArticles = styled.div`
-  ${tw`mb-16 pl-8`};
+  ${tw`mb-16 pl-8 w-2/5`};
 `
 const LatestArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
