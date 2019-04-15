@@ -11,7 +11,7 @@ const FeaturedArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
 `
 const FeaturedArticles__Wrapper = styled.div`
-  ${tw`flex flex-wrap justify-start`};
+  //${tw`flex flex-wrap justify-start`};
 `
 const FeaturedArticles__Title = styled.h3`
   ${tw`text-base leading-normal font-normal font-body pr-8 truncate max-w-xs w-auto`};

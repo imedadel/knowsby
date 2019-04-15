@@ -1,10 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
+import tw from "tailwind.macro"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+
+const Title = styled.h1`
+  ${tw`pl-8`};
+`
+const Content = styled.div`
+  ${tw`pl-8`};
+`
 
 class ArticleTemplate extends React.Component {
   render() {
@@ -18,8 +27,8 @@ class ArticleTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p
+        <Title>{post.frontmatter.title}</Title>
+        {/* <p
           style={{
             ...scale(-1 / 5),
             display: `block`,
@@ -28,8 +37,8 @@ class ArticleTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </p> */}
+        <Content dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),

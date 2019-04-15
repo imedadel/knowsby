@@ -12,7 +12,7 @@ const LatestArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
 `
 const LatestArticles__Wrapper = styled.div`
-  ${tw`flex flex-wrap justify-start`};
+  //${tw`flex flex-wrap justify-start`};
 `
 const LatestArticles__Link = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
