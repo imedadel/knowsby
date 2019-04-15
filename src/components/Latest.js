@@ -15,7 +15,7 @@ const LatestArticles__Wrapper = styled.div`
   ${tw`flex flex-wrap justify-start`};
 `
 const LatestArticles__Link = styled(Link)`
-  ${tw`no-underline text-grey-darkest hover:underline`};
+  ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
 const LatestArticles__Title = styled.h3`
   ${tw`text-base leading-normal font-normal font-body pr-8 truncate max-w-xs w-auto`};

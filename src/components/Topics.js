@@ -18,7 +18,7 @@ const TopicTitle = styled.h3`
   ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
 `
 const TopicLink = styled(Link)`
-  ${tw`no-underline text-grey-darkest hover:underline`};
+  ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
 const Topics = ({ data }) => {
   let topics = []

@@ -4,10 +4,16 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Featured from "../components/Featured"
+// import Featured from "../components/Featured"
 import { rhythm } from "../utils/typography"
 import Topics from "../components/Topics"
-import Latest from "../components/Latest"
+// import Latest from "../components/Latest"
+import Prefooter from "../components/Prefooter"
+
+//TODO: Style the article pages
+//TODO: Add About page
+//TODO: Add more styling for the homepage, or find something interesting to implement
+//TODO: Make the fucking shit interesting and not boring
 
 class ArticlesIndex extends React.Component {
   render() {
@@ -21,9 +27,10 @@ class ArticlesIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         {/* <Bio /> */}
-        <Featured />
+        {/* <Featured /> */}
         <Topics />
-        <Latest />
+        <Prefooter />
+        {/* <Latest /> */}
         {/* <Footer /> */}
       </Layout>
     )
