@@ -14,6 +14,7 @@ import Prefooter from "../components/Prefooter"
 //TODO: Add About page
 //TODO: Add more styling for the homepage, or find something interesting to implement
 //TODO: Make the fucking shit interesting and not boring
+//TODO: Add topics pages and links
 
 class ArticlesIndex extends React.Component {
   render() {

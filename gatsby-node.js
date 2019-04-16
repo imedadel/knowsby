@@ -1,10 +1,12 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require("lodash")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const article = path.resolve(`./src/templates/article.js`)
+  const topics = path.resolve(`./src/templates/topics.js`)
   return graphql(
     `
       {
@@ -19,6 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                topic
               }
             }
           }
@@ -44,6 +47,27 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
+        },
+      })
+    })
+
+    let topicsList = []
+    // Iterate through each post, putting all found tags into `tags`
+    _.each(posts, edge => {
+      if (_.get(edge, "node.frontmatter.topic")) {
+        topicsList = topicsList.concat(edge.node.frontmatter.topic)
+      }
+    })
+    // Eliminate duplicate tags
+    topicsList = _.uniq(topicsList)
+
+    // Make tag pages
+    topicsList.forEach(tpc => {
+      createPage({
+        path: `/topics/${_.kebabCase(tpc)}/`,
+        component: topics,
+        context: {
+          tpc,
         },
       })
     })
