@@ -17,6 +17,9 @@ const TopicName = styled.div`
 const Title = styled.h2`
   ${tw`text-3xl mb-4`};
 `
+const StyledLink = styled(Link)`
+  ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
+`
 const Topics = ({ data }) => {
   let topics = []
 
@@ -31,7 +34,11 @@ const Topics = ({ data }) => {
     <TopicsList>
       <Title>🗄️ Topics</Title>
       {topics.map(topic => (
-        <TopicName>📁 {topic}</TopicName>
+        <TopicName>
+          <StyledLink to={`topics/${_.kebabCase(topic)}`}>
+            📁 {topic}
+          </StyledLink>
+        </TopicName>
       ))}
     </TopicsList>
   )
@@ -55,3 +62,29 @@ export default props => (
     render={data => <Topics data={data} {...props} />}
   />
 )
+
+/* Use this query instead!!!
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___topic) {
+        fieldValue
+        totalCount
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+  */
