@@ -1,5 +1,8 @@
 import React from "react"
 // import PropTypes from "prop-types"
+import SEO from "../components/seo"
+import styled from "styled-components"
+import tw from "tailwind.macro"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -7,6 +10,23 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+
+// Site Components
+import Layout from "../components/layout"
+
+// Styled Components
+const StyledWrapper = styled.div`
+  ${tw`full mb-8 pl-8`};
+`
+const StyledName = styled.h1`
+  ${tw`text-3xl mb-4`};
+`
+const StyledTitle = styled.h3`
+  ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
+`
+const StyledLink = styled(Link)`
+  ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
+`
 
 const TagsPage = ({
   data: {
@@ -16,21 +36,20 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout location={`/topics`}>
     <Helmet title={title} />
-    <div>
-      <h1>Topics</h1>
-      <ul>
-        {group.map(topic => (
-          <li key={topic.fieldValue}>
-            <Link to={`/topics/${kebabCase(topic.fieldValue)}/`}>
-              {topic.fieldValue} ({topic.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
+    <SEO title={`Topics`} />
+    <StyledWrapper>
+      <StyledName>Topics</StyledName>
+      {group.map(topic => (
+        <StyledTitle key={topic.fieldValue}>
+          <StyledLink to={`/topics/${kebabCase(topic.fieldValue)}/`}>
+            {topic.fieldValue} ({topic.totalCount})
+          </StyledLink>
+        </StyledTitle>
+      ))}
+    </StyledWrapper>
+  </Layout>
 )
 
 // TagsPage.propTypes = {
