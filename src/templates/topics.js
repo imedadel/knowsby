@@ -3,34 +3,57 @@ import React from "react"
 
 // Components
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import styled from "styled-components"
+import tw from "tailwind.macro"
 
-const Topics = ({ pageContext, data }) => {
+const StyledWrapper = styled.div`
+  ${tw`full mb-8 pl-8`};
+`
+const StyledName = styled.h1`
+  ${tw`text-3xl mb-4`};
+`
+const StyledTitle = styled.h3`
+  ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
+`
+const StyledLink = styled(Link)`
+  ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
+`
+
+const Topics = ({ pageContext, data, location }) => {
   const { tpc } = pageContext
+  // const { location } = location
+  const siteTitle = data.site.siteMetadata.title
   const { edges, totalCount } = data.allMarkdownRemark
-  const topicHeader = `${totalCount} post${
+  const topicHeader = `${totalCount} article${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tpc}"`
+  } about “${tpc}”`
 
   return (
-    <div>
-      <h1>{topicHeader}</h1>
-      <ul>
+    <Layout location={location} title={siteTitle}>
+      <SEO title={tpc} />
+      <StyledWrapper>
+        <StyledName>{topicHeader}</StyledName>
+
         {edges.map(({ node }) => {
           const { slug } = node.fields
           const { title } = node.frontmatter
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <div key={slug}>
+              <StyledTitle>
+                <StyledLink to={slug}>📝 {title}</StyledLink>
+              </StyledTitle>
+            </div>
           )
         })}
-      </ul>
+      </StyledWrapper>
       {/*
               This links to a page that does not yet exist.
               We'll come back to it!
             */}
       <Link to="/topics">All tags</Link>
-    </div>
+    </Layout>
   )
 }
 
@@ -61,6 +84,12 @@ export default Topics
 
 export const pageQuery = graphql`
   query($tpc: String) {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
