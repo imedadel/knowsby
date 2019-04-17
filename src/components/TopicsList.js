@@ -63,7 +63,7 @@ export default props => (
   />
 )
 
-/* Use this query instead!!!
+/* TODO: Use this query instead!!!
   query {
     site {
       siteMetadata {
