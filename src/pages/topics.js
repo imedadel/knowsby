@@ -19,10 +19,10 @@ const StyledWrapper = styled.div`
   ${tw`full mb-8 pl-8`};
 `
 const StyledName = styled.h1`
-  ${tw`text-3xl mb-4`};
+  ${tw`text-5xl mb-4`};
 `
 const StyledTitle = styled.h3`
-  ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
+  ${tw`text-xl mb-4 font-normal font-body leading-normal truncate`};
 `
 const StyledLink = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
