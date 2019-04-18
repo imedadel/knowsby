@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import Featured from "../components/Featured"
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 import Topics from "../components/Topics"
 // import Latest from "../components/Latest"
 import Prefooter from "../components/Prefooter"
@@ -45,23 +45,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            topic
-            featured
-          }
-        }
       }
     }
   }
