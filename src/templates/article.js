@@ -14,6 +14,9 @@ const Title = styled.h1`
 const Content = styled.div`
   ${tw`pl-8`};
 `
+const Navigation = styled.ul`
+  ${tw`flex flex-wrap justify-between list-reset pt-12`};
+`
 
 class ArticleTemplate extends React.Component {
   render() {
@@ -39,22 +42,14 @@ class ArticleTemplate extends React.Component {
           {post.frontmatter.date}
         </p> */}
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
+        {/* <hr
           style={{
             marginBottom: rhythm(1),
           }}
-        />
-        <Bio />
+        /> */}
+        {/* <Bio /> */}
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        {/* <Navigation>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -69,7 +64,7 @@ class ArticleTemplate extends React.Component {
               </Link>
             )}
           </li>
-        </ul>
+        </Navigation> */}
       </Layout>
     )
   }
