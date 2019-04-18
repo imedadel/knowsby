@@ -11,8 +11,8 @@ import tw from "tailwind.macro"
 const TopicsList = styled.div`
   ${tw`w-1/5`};
 `
-const TopicName = styled.div`
-  ${tw`text-lg leading-normal`};
+const TopicName = styled.h3`
+  ${tw`text-base  font-normal font-body leading-tight max-w-xs w-auto mb-2`};
 `
 const Title = styled.h2`
   ${tw`text-3xl mb-4`};

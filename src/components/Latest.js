@@ -11,14 +11,11 @@ const LatestArticles = styled.div`
 const LatestArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
 `
-const LatestArticles__Wrapper = styled.div`
-  //${tw`flex flex-wrap justify-start`};
-`
 const LatestArticles__Link = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
 const LatestArticles__Title = styled.h3`
-  ${tw`text-base leading-normal font-normal font-body pr-8 truncate max-w-xs w-auto`};
+  ${tw`text-base  font-normal font-body leading-tight truncate max-w-xs w-auto mb-2`};
 `
 
 // const LatestWrapper = styled.div`
@@ -28,26 +25,16 @@ const LatestArticles__Title = styled.h3`
 const Latest = ({ data }) => (
   <LatestArticles>
     <LatestArticles__Heading>✨ Latest</LatestArticles__Heading>
-    <LatestArticles__Wrapper>
-      {data.allMarkdownRemark.edges.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <div key={node.fields.slug}>
-            <LatestArticles__Title>
-              <LatestArticles__Link to={node.fields.slug}>
-                📝 {title}
-              </LatestArticles__Link>
-            </LatestArticles__Title>
-            {/* <small>{node.frontmatter.date}</small>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          /> */}
-          </div>
-        )
-      })}
-    </LatestArticles__Wrapper>
+    {data.allMarkdownRemark.edges.map(({ node }) => {
+      const title = node.frontmatter.title || node.fields.slug
+      return (
+        <LatestArticles__Title key={node.fields.slug}>
+          <LatestArticles__Link to={node.fields.slug}>
+            📝 {title}
+          </LatestArticles__Link>
+        </LatestArticles__Title>
+      )
+    })}
   </LatestArticles>
 )
 

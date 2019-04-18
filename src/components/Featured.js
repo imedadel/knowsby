@@ -10,11 +10,8 @@ const FeaturedArticles = styled.div`
 const FeaturedArticles__Heading = styled.h2`
   ${tw`text-3xl mb-4`};
 `
-const FeaturedArticles__Wrapper = styled.div`
-  //${tw`flex flex-wrap justify-start`};
-`
 const FeaturedArticles__Title = styled.h3`
-  ${tw`text-base leading-normal font-normal font-body pr-8 truncate max-w-xs w-auto`};
+  ${tw`text-base  font-normal font-body leading-tight truncate max-w-xs w-auto mb-2`};
 `
 const FeaturedArticles__Link = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
@@ -43,22 +40,18 @@ export default () => (
     render={data => (
       <FeaturedArticles>
         <FeaturedArticles__Heading>🎀 Featured</FeaturedArticles__Heading>
-        <FeaturedArticles__Wrapper>
-          {data.allMarkdownRemark.edges.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            if (node.frontmatter.featured) {
-              return (
-                <div key={node.fields.slug}>
-                  <FeaturedArticles__Title>
-                    <FeaturedArticles__Link to={node.fields.slug}>
-                      📝 {title}
-                    </FeaturedArticles__Link>
-                  </FeaturedArticles__Title>
-                </div>
-              )
-            }
-          })}
-        </FeaturedArticles__Wrapper>
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          if (node.frontmatter.featured) {
+            return (
+              <FeaturedArticles__Title key={node.fields.slug}>
+                <FeaturedArticles__Link to={node.fields.slug}>
+                  📝 {title}
+                </FeaturedArticles__Link>
+              </FeaturedArticles__Title>
+            )
+          }
+        })}
       </FeaturedArticles>
     )}
   />

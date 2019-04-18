@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import { rhythm } from "../utils/typography"
+// import { rhythm } from "../utils/typography"
 import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
@@ -15,7 +15,7 @@ const TopicName = styled.h2`
   ${tw`text-3xl mb-4`};
 `
 const TopicTitle = styled.h3`
-  ${tw`text-base mb-4 font-normal font-body leading-normal truncate`};
+  ${tw`text-base font-normal font-body leading-tight truncate max-w-xs w-auto mb-2`};
 `
 const TopicLink = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
@@ -29,11 +29,9 @@ const Topics = ({ data }) => {
           {topic.edges.map(edge => {
             const title = edge.node.frontmatter.title || edge.node.fields.slug
             return (
-              <div key={edge.node.fields.slug}>
-                <TopicTitle>
-                  <TopicLink to={edge.node.fields.slug}>📝 {title}</TopicLink>
-                </TopicTitle>
-              </div>
+              <TopicTitle key={edge.node.fields.slug}>
+                <TopicLink to={edge.node.fields.slug}>📝 {title}</TopicLink>
+              </TopicTitle>
             )
           })}
         </TopicWrapper>
