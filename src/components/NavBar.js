@@ -18,6 +18,9 @@ const NavBar_MenuContainer = styled.div`
 const NavBar_MenuLink = styled(Link)`
   ${tw`block mt-4 sm:inline-block sm:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
 `
+const NavBar_MenuHref = styled.a`
+  ${tw`block mt-4 sm:inline-block sm:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
+`
 
 export default () => (
   <NavBar>
@@ -26,8 +29,10 @@ export default () => (
     </NavBar_TitleContainer>
     <NavBar_MenuContainer>
       <NavBar_MenuLink to={`/`}>Home</NavBar_MenuLink>
-      <NavBar_MenuLink to={`/about`}>About</NavBar_MenuLink>
-      <NavBar_MenuLink to={`/contact`}>Contact</NavBar_MenuLink>
+      <NavBar_MenuHref href={`https://devdocs.io/`}>About</NavBar_MenuHref>
+      <NavBar_MenuHref href={`https://www.gatsbyjs.org/docs/gatsby-link/`}>
+        Contact
+      </NavBar_MenuHref>
     </NavBar_MenuContainer>
   </NavBar>
 )
