@@ -29,10 +29,8 @@ export default () => (
     </NavBar_TitleContainer>
     <NavBar_MenuContainer>
       <NavBar_MenuLink to={`/`}>Home</NavBar_MenuLink>
-      <NavBar_MenuHref href={`https://devdocs.io/`}>About</NavBar_MenuHref>
-      <NavBar_MenuHref href={`https://www.gatsbyjs.org/docs/gatsby-link/`}>
-        Contact
-      </NavBar_MenuHref>
+      <NavBar_MenuHref href={`https://imedadel.me`}>About</NavBar_MenuHref>
+      <NavBar_MenuHref href={`https://imedadel.me`}>Contact</NavBar_MenuHref>
     </NavBar_MenuContainer>
   </NavBar>
 )

@@ -18,13 +18,16 @@ const Footer__MenuContainer = styled.div`
 const Footer__MenuLink = styled(Link)`
   ${tw`block mt-4 sm:inline-block sm:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
 `
+const Footer__MenuHref = styled.a`
+  ${tw`block mt-4 sm:inline-block sm:mt-0 text-grey-darkest no-underline hover:underline mr-4`};
+`
 
 export default () => (
   <Footer>
     <Footer__MenuContainer>
       <Footer__MenuLink to={`/`}>Home</Footer__MenuLink>
-      <Footer__MenuLink to={`/about`}>About</Footer__MenuLink>
-      <Footer__MenuLink to={`/contact`}>Contact</Footer__MenuLink>
+      <Footer__MenuHref href={`https://imedadel.me`}>About</Footer__MenuHref>
+      <Footer__MenuHref href={`https://imedadel.me`}>Contact</Footer__MenuHref>
     </Footer__MenuContainer>
     <Footer__CopyrightsContainer>
       <Footer__CopyrightsText>© Knowsby</Footer__CopyrightsText>
