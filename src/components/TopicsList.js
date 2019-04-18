@@ -12,7 +12,7 @@ const TopicsList = styled.div`
   ${tw`w-1/5`};
 `
 const TopicName = styled.div`
-  ${tw`text-xl leading-normal`};
+  ${tw`text-lg leading-normal`};
 `
 const Title = styled.h2`
   ${tw`text-3xl mb-4`};
@@ -21,22 +21,22 @@ const StyledLink = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
 const Topics = ({ data }) => {
-  let topics = []
+  // let topics = []
 
-  _.each(data.allMarkdownRemark.edges, edge => {
-    if (_.get(edge, "node.frontmatter.topic")) {
-      topics = topics.concat(edge.node.frontmatter.topic)
-    }
-  })
+  // _.each(data.allMarkdownRemark.edges, edge => {
+  //   if (_.get(edge, "node.frontmatter.topic")) {
+  //     topics = topics.concat(edge.node.frontmatter.topic)
+  //   }
+  // })
 
-  topics = _.uniq(topics)
+  // topics = _.uniq(topics)
   return (
     <TopicsList>
       <Title>🗄️ Topics</Title>
-      {topics.map(topic => (
+      {data.allMarkdownRemark.group.map(topic => (
         <TopicName>
-          <StyledLink to={`topics/${_.kebabCase(topic)}`}>
-            📁 {topic}
+          <StyledLink to={`topics/${_.kebabCase(topic.fieldValue)}`}>
+            📁 {topic.fieldValue} ({topic.totalCount})
           </StyledLink>
         </TopicName>
       ))}
@@ -48,13 +48,10 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          edges {
-            node {
-              frontmatter {
-                topic
-              }
-            }
+        allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___topic) {
+            fieldValue
+            totalCount
           }
         }
       }
