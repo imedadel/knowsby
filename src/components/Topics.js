@@ -21,37 +21,20 @@ const TopicLink = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
 const Topics = ({ data }) => {
-  let topics = []
-
-  _.each(data.allMarkdownRemark.edges, edge => {
-    if (_.get(edge, "node.frontmatter.topic")) {
-      topics = topics.concat(edge.node.frontmatter.topic)
-    }
-  })
-
-  topics = _.uniq(topics)
   return (
     <TopicsList>
-      {topics.map(topic => (
+      {data.allMarkdownRemark.group.map(topic => (
         <TopicWrapper>
-          <TopicName>{topic}</TopicName>
-          {data.allMarkdownRemark.edges.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            if (node.frontmatter.topic === topic) {
-              return (
-                <div key={node.fields.slug}>
-                  <TopicTitle>
-                    <TopicLink to={node.fields.slug}>📝 {title}</TopicLink>
-                  </TopicTitle>
-                  {/* <small>{node.frontmatter.date}</small> */}
-                  {/* <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  /> */}
-                </div>
-              )
-            }
+          <TopicName>{topic.fieldValue}</TopicName>
+          {topic.edges.map(edge => {
+            const title = edge.node.frontmatter.title || edge.node.fields.slug
+            return (
+              <div key={edge.node.fields.slug}>
+                <TopicTitle>
+                  <TopicLink to={edge.node.fields.slug}>📝 {title}</TopicLink>
+                </TopicTitle>
+              </div>
+            )
           })}
         </TopicWrapper>
       ))}
@@ -63,19 +46,21 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-          edges {
-            node {
-              excerpt
-              fields {
-                slug
-              }
-              frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                title
-                featured
-                description
-                topic
+        allMarkdownRemark(
+          limit: 2000
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          group(field: frontmatter___topic) {
+            fieldValue
+            totalCount
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                }
               }
             }
           }
