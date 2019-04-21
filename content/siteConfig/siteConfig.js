@@ -12,7 +12,7 @@ module.exports = {
     
     siteAuthor: "Imed Adel",
     
-    googleAnalyticsID: 'UA-47519312-5',
+    googleAnalyticsID: 'UA-133819882-2',
 
     // Navbar Links
     navbarLinks: [
