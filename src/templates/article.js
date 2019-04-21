@@ -1,12 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+// import { rhythm, scale } from "../utils/typography"
 
 const Title = styled.h1`
   ${tw`pl-8`};
@@ -25,7 +25,7 @@ class ArticleTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}

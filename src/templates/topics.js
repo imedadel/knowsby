@@ -34,7 +34,7 @@ const Topics = ({ pageContext, data, location }) => {
   } about “${tpc}”`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <SEO title={tpc} />
       <StyledWrapper>
         <StyledName>{topicHeader}</StyledName>

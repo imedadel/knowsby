@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
+import SEO from "../components/seo"
 // import Featured from "../components/Featured"
 // import { rhythm } from "../utils/typography"
 import Topics from "../components/Topics"
@@ -22,7 +22,8 @@ class ArticlesIndex extends React.Component {
     // const siteTitle = data.site.siteMetadata.title
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
+        <SEO />
         {/* <Bio /> */}
         {/* <Featured /> */}
         <Topics />
