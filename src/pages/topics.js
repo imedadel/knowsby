@@ -36,7 +36,7 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout location={`/topics`}>
+  <Layout>
     <Helmet title={title} />
     <SEO title={`Topics`} />
     <StyledWrapper>

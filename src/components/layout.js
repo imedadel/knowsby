@@ -17,15 +17,7 @@ const LayoutContainer = styled.div`
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    // const rootPath = `${__PATH_PREFIX__}/`
-    // let fullTitle
-
-    // if (location.pathname === rootPath) {
-    //   fullTitle = siteConfig.siteTitle
-    // } else {
-    //   fullTitle = siteConfig.siteTitle
-    // }
+    const { children } = this.props
     return (
       <LayoutContainer>
         <header>

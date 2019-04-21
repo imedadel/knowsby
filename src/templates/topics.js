@@ -24,9 +24,8 @@ const StyledAllTopics = styled(Link)`
   ${tw`no-underline text-grey-darkest hover:text-black text-lg hover:underline pl-8 mb-8 block`};
 `
 
-const Topics = ({ pageContext, data, location }) => {
+const Topics = ({ pageContext, data }) => {
   const { tpc } = pageContext
-  // const { location } = location
   const siteTitle = data.site.siteMetadata.title
   const { edges, totalCount } = data.allMarkdownRemark
   const topicHeader = `${totalCount} article${
