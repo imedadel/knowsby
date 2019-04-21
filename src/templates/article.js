@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
-import Bio from "../components/bio"
+// import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"

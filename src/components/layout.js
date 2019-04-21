@@ -5,6 +5,9 @@ import tw from "tailwind.macro"
 
 import NavBar from "./NavBar"
 import Footer from "./Footer"
+import SEO from "./seo"
+
+// import siteConfig from "../../content/siteConfig/siteConfig"
 
 import { rhythm, scale } from "../utils/typography"
 
@@ -31,55 +34,17 @@ const LayoutContainer = styled.div`
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    // const rootPath = `${__PATH_PREFIX__}/`
+    // let fullTitle
 
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-            display: `inline-block`,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-            display: `inline-block`,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+    // if (location.pathname === rootPath) {
+    //   fullTitle = siteConfig.siteTitle
+    // } else {
+    //   fullTitle = siteConfig.siteTitle
+    // }
     return (
       <LayoutContainer>
+        <SEO title={title} />
         <header>
           {/* {header}
           <TopNav>

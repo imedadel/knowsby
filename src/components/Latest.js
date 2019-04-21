@@ -5,6 +5,8 @@ import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
+import siteConfig from "../../content/siteConfig/siteConfig"
+
 const StyledWrapper = styled.div`
   ${tw`mb-16 pl-8 w-2/5`};
 `
@@ -20,7 +22,7 @@ const StyledTitle = styled.h3`
 
 const Latest = ({ data }) => (
   <StyledWrapper>
-    <StyledHeading>✨ Latest</StyledHeading>
+    <StyledHeading>{siteConfig.pageLabels.latest}</StyledHeading>
     {data.allMarkdownRemark.edges.map(({ node }) => {
       const title = node.frontmatter.title || node.fields.slug
       return (

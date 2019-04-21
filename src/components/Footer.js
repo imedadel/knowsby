@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
+import siteConfig from "../../content/siteConfig/siteConfig"
+
 const Wrapper = styled.nav`
   ${tw`flex justify-between flex-wrap bg-transparent pb-16 pt-8 w-full align-middle self-center border-t border-b-0 border-r-0 border-l-0 border-solid border-grey-light pl-8`};
 `
@@ -26,11 +28,12 @@ export default () => (
   <Wrapper>
     <MenuContainer>
       <MenuLink to={`/`}>Home</MenuLink>
-      <MenuHref href={`https://imedadel.me`}>About</MenuHref>
-      <MenuHref href={`https://imedadel.me`}>Contact</MenuHref>
+      {siteConfig.navbarLinks.map(e => (
+        <MenuHref href={e.link}>{e.label}</MenuHref>
+      ))}
     </MenuContainer>
     <CopyrightsContainer>
-      <CopyrightsText>© Knowsby</CopyrightsText>
+      <CopyrightsText>© {siteConfig.siteTitleAlt}</CopyrightsText>
     </CopyrightsContainer>
   </Wrapper>
 )

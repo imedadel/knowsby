@@ -20,6 +20,9 @@ const StyledTitle = styled.h3`
 const StyledLink = styled(Link)`
   ${tw`no-underline text-grey-darker hover:text-grey-darkest hover:underline`};
 `
+const StyledAllTopics = styled(Link)`
+  ${tw`no-underline text-grey-darkest hover:text-black text-lg hover:underline pl-8 mb-8 block`};
+`
 
 const Topics = ({ pageContext, data, location }) => {
   const { tpc } = pageContext
@@ -52,7 +55,7 @@ const Topics = ({ pageContext, data, location }) => {
               This links to a page that does not yet exist.
               We'll come back to it!
             */}
-      <Link to="/topics">All tags</Link>
+      <StyledAllTopics to="/topics">🗄️ All topics</StyledAllTopics>
     </Layout>
   )
 }

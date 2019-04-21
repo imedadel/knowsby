@@ -4,6 +4,8 @@ import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
+import siteConfig from "../../content/siteConfig/siteConfig"
+
 const StyledList = styled.div`
   ${tw`w-1/5`};
 `
@@ -19,7 +21,7 @@ const StyledLink = styled(Link)`
 const Topics = ({ data }) => {
   return (
     <StyledList>
-      <StyledTitle>🗄️ Topics</StyledTitle>
+      <StyledTitle>{siteConfig.pageLabels.topics}</StyledTitle>
       {data.allMarkdownRemark.group.map(topic => (
         <StyledName>
           <StyledLink to={`topics/${_.kebabCase(topic.fieldValue)}`}>

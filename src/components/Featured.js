@@ -3,6 +3,8 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
+import siteConfig from "../../content/siteConfig/siteConfig"
+
 const StyledWrapper = styled.div`
   ${tw`mb-16 pl-8 w-2/5`};
 `
@@ -38,7 +40,7 @@ export default () => (
     `}
     render={data => (
       <StyledWrapper>
-        <StyledHeading>🎀 Featured</StyledHeading>
+        <StyledHeading>{siteConfig.pageLabels.featured}</StyledHeading>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           if (node.frontmatter.featured) {

@@ -1,12 +1,11 @@
+const siteConfig = require('./content/siteConfig/siteConfig')
+
 module.exports = {
   siteMetadata: {
-    title: `knowsby`,
-    author: `Imed Adel`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `Imed_Adel`,
-    },
+    title: siteConfig.siteTitleAlt,
+    author: siteConfig.siteAuthor,
+    description: siteConfig.siteDescription,
+    siteUrl: siteConfig.siteUrl,
   },
   plugins: [
     {
@@ -30,7 +29,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 600,
             },
           },
           {
@@ -50,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: siteConfig.googleAnalyticsID,
       },
     },
     `gatsby-plugin-lodash`,
@@ -59,13 +58,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        name: siteConfig.siteTitleAlt,
+        short_name: siteConfig.siteTitleShort,
+        start_url: siteConfig.pathPrefix,
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.themeColor,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/favicon.png`,
       },
     },
     `gatsby-plugin-offline`,
