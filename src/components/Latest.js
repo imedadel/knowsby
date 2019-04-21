@@ -1,7 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-// import { rhythm } from "../utils/typography"
-// import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 

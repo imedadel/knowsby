@@ -34,8 +34,6 @@ export default () => (
       {siteConfig.navbarLinks.map(e => (
         <MenuHref href={e.link}>{e.label}</MenuHref>
       ))}
-      {/* <MenuHref href={`https://imedadel.me`}>About</MenuHref>
-      <MenuHref href={`https://imedadel.me`}>Contact</MenuHref> */}
     </MenuContainer>
   </Wrapper>
 )

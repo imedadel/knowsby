@@ -1,5 +1,4 @@
 import React from "react"
-// import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
@@ -26,7 +25,6 @@ const StyledAllTopics = styled(Link)`
 
 const Topics = ({ pageContext, data }) => {
   const { tpc } = pageContext
-  // const siteTitle = data.site.siteMetadata.title
   const { edges, totalCount } = data.allMarkdownRemark
   const topicHeader = `${totalCount} article${
     totalCount === 1 ? "" : "s"
@@ -55,10 +53,6 @@ const Topics = ({ pageContext, data }) => {
           )
         })}
       </StyledWrapper>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
       <StyledAllTopics to="/topics">
         <span role="img" aria-label="File Cabinet">
           🗄️
@@ -68,29 +62,6 @@ const Topics = ({ pageContext, data }) => {
     </Layout>
   )
 }
-
-// Tags.propTypes = {
-//   pageContext: PropTypes.shape({
-//     tag: PropTypes.string.isRequired,
-//   }),
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       totalCount: PropTypes.number.isRequired,
-//       edges: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           node: PropTypes.shape({
-//             frontmatter: PropTypes.shape({
-//               title: PropTypes.string.isRequired,
-//             }),
-//             fields: PropTypes.shape({
-//               slug: PropTypes.string.isRequired,
-//             }),
-//           }),
-//         }).isRequired
-//       ),
-//     }),
-//   }),
-// }
 
 export default Topics
 
