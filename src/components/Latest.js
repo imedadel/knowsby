@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 // import { rhythm } from "../utils/typography"
-import _ from "lodash"
+// import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
@@ -27,7 +27,12 @@ const Latest = ({ data }) => (
       const title = node.frontmatter.title || node.fields.slug
       return (
         <StyledTitle key={node.fields.slug}>
-          <StyledLink to={node.fields.slug}>📝 {title}</StyledLink>
+          <StyledLink to={node.fields.slug}>
+            <span role="img" aria-label="Memo">
+              📝
+            </span>{" "}
+            {title}
+          </StyledLink>
         </StyledTitle>
       )
     })}

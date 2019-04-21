@@ -26,7 +26,7 @@ const StyledAllTopics = styled(Link)`
 
 const Topics = ({ pageContext, data }) => {
   const { tpc } = pageContext
-  const siteTitle = data.site.siteMetadata.title
+  // const siteTitle = data.site.siteMetadata.title
   const { edges, totalCount } = data.allMarkdownRemark
   const topicHeader = `${totalCount} article${
     totalCount === 1 ? "" : "s"
@@ -44,7 +44,12 @@ const Topics = ({ pageContext, data }) => {
           return (
             <div key={slug}>
               <StyledTitle>
-                <StyledLink to={slug}>📝 {title}</StyledLink>
+                <StyledLink to={slug}>
+                  <span role="img" aria-label="Memo">
+                    📝
+                  </span>{" "}
+                  {title}
+                </StyledLink>
               </StyledTitle>
             </div>
           )
@@ -54,7 +59,12 @@ const Topics = ({ pageContext, data }) => {
               This links to a page that does not yet exist.
               We'll come back to it!
             */}
-      <StyledAllTopics to="/topics">🗄️ All topics</StyledAllTopics>
+      <StyledAllTopics to="/topics">
+        <span role="img" aria-label="File Cabinet">
+          🗄️
+        </span>{" "}
+        All topics
+      </StyledAllTopics>
     </Layout>
   )
 }

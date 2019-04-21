@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
@@ -15,8 +15,8 @@ const StyledParagraph = styled.p`
 
 class NotFoundPage extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    // const { data } = this.props
+    // const siteTitle = data.site.siteMetadata.title
 
     return (
       <Layout>
@@ -32,12 +32,12 @@ class NotFoundPage extends React.Component {
 
 export default NotFoundPage
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `

@@ -46,9 +46,16 @@ export default () => (
           if (node.frontmatter.featured) {
             return (
               <StyledTitle key={node.fields.slug}>
-                <StyledLink to={node.fields.slug}>📝 {title}</StyledLink>
+                <StyledLink to={node.fields.slug}>
+                  <span role="img" aria-label="Memo">
+                    📝
+                  </span>{" "}
+                  {title}
+                </StyledLink>
               </StyledTitle>
             )
+          } else {
+            return null
           }
         })}
       </StyledWrapper>

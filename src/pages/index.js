@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -18,7 +18,7 @@ import Prefooter from "../components/Prefooter"
 
 class ArticlesIndex extends React.Component {
   render() {
-    const { data } = this.props
+    // const { data } = this.props
     // const siteTitle = data.site.siteMetadata.title
 
     return (
@@ -37,12 +37,12 @@ class ArticlesIndex extends React.Component {
 
 export default ArticlesIndex
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//   }
+// `

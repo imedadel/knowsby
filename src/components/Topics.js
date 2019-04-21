@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import _ from "lodash"
+// import _ from "lodash"
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
@@ -29,7 +29,12 @@ const Topics = ({ data }) => {
             const title = edge.node.frontmatter.title || edge.node.fields.slug
             return (
               <StyledTitle key={edge.node.fields.slug}>
-                <StyledLink to={edge.node.fields.slug}>📝 {title}</StyledLink>
+                <StyledLink to={edge.node.fields.slug}>
+                  <span role="img" aria-label="Memo">
+                    📝
+                  </span>{" "}
+                  {title}
+                </StyledLink>
               </StyledTitle>
             )
           })}

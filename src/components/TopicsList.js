@@ -25,7 +25,10 @@ const Topics = ({ data }) => {
       {data.allMarkdownRemark.group.map(topic => (
         <StyledName>
           <StyledLink to={`topics/${_.kebabCase(topic.fieldValue)}`}>
-            📁 {topic.fieldValue} ({topic.totalCount})
+            <span role="img" aria-label="File Folder">
+              📁
+            </span>{" "}
+            {topic.fieldValue} ({topic.totalCount})
           </StyledLink>
         </StyledName>
       ))}
