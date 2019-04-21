@@ -1,8 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
+import styled from "styled-components"
+import tw from "tailwind.macro"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const StyledTitle = styled.h1`
+  ${tw`font-5xl pl-8 mb-4`};
+`
+const StyledParagraph = styled.p`
+  ${tw`pl-8`};
+`
 
 class NotFoundPage extends React.Component {
   render() {
@@ -12,8 +21,10 @@ class NotFoundPage extends React.Component {
     return (
       <Layout>
         <SEO title="404: Not Found" />
-        <h1>Not Found</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <StyledTitle>Not Found</StyledTitle>
+        <StyledParagraph>
+          You just hit a route that doesn&#39;t exist... the sadness.
+        </StyledParagraph>
       </Layout>
     )
   }

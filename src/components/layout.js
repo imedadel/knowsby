@@ -12,7 +12,7 @@ import Footer from "./Footer"
 // import { rhythm, scale } from "../utils/typography"
 
 const LayoutContainer = styled.div`
-  ${tw`max-w-2xl m-auto pr-8`};
+  ${tw`max-w-2xl m-auto pr-8 text-black`};
 `
 
 class Layout extends React.Component {

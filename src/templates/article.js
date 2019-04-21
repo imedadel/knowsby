@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 // import { rhythm, scale } from "../utils/typography"
 
 const Title = styled.h1`
-  ${tw`pl-8`};
+  ${tw`pl-8 text-5xl`};
 `
 const Content = styled.div`
   ${tw`pl-8`};

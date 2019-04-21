@@ -24,7 +24,6 @@ const typography = new Typography({
   headerFontFamily: ["Fira Sans", "Helvetica", "Arial", "sans-serif"],
   bodyFontFamily: ["Merriweather", "serif"],
   scaleRatio: 3,
-  bodyColor: "#22292f",
   // See below for the full list of options.
 })
 
