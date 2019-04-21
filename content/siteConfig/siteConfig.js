@@ -24,6 +24,10 @@ module.exports = {
             label: "Contact",
             link: "https://imedadel.me",
         },
+        {
+            label: "Buy",
+            link: "https://pay.paddle.com/checkout/557180",
+        },
     ],
 
     // Labels
